@@ -4,15 +4,12 @@ import Login from './components/Pages/Login';
 import SignUp from './components/Pages/SignUp';
 import Navbar from './components/Shared/Navbar';
 
-
-// const auth = getAuth(app);
-
 function App() {
 
   return (
     <div className='app'>
       <div>
-        <Navbar/>
+        <SignUp/>
         <Routes>
           <Route path='/'></Route>
           <Route path='/login' element={<Login />}></Route>
