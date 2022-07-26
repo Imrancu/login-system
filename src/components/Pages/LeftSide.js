@@ -1,15 +1,19 @@
 import React from 'react';
-import bg from '../../assets/bg.jpg'
+import bg from '../../assets/bg.jpg';
+import logo from '../../assets/logo.png'
+import "./LeftSide.css"
 
 const LeftSide = () => {
     return (
-            <div style={{backgroundImage:  `url(${bg})`}} className='fixed w-full bg-no-repeat h-screen'>
-                <div className='text-white pl-14'>
-                    <h1 class="text-3xl mt-7 font-bold">logo</h1>
-                    <p className='text-5xl font-bold my-56 ml-40'>Middle</p>
+        <div /* style={{backgroundImage: `url(${bg})`}} */ className='relative bg-no-repeat'>
+            <img className='absolute h-screen' src={bg} alt="" />
+            <div className='text-white absolute'>
+                <div className='left-side-content flex flex-col justify-between h-screen p-10'>
+                    <img className='w-16' src={logo} alt="" />
                     <h3 class="text-2xl">© 2022 Fidia Creatives, Inc.</h3>
                 </div>
             </div>
+        </div>
     );
 };
 

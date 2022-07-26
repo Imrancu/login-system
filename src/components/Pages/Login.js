@@ -30,11 +30,9 @@ const Login = () => {
     };
 
     return (
-        <div className='flex'>
-            <div className='flex-1 hidden lg:block'>
-                <LeftSide/>
-            </div>
-            <div className='flex-1 items-start m-16'>
+        <div className='flex h-screen'>
+            <div className='flex-1 hidden lg:block'><LeftSide /></div>
+            <div className='flex-1 mx-12 my-12'>
                 <h2 className='text-3xl text-left font-bold'>Welcome back!</h2>
                 <p className='text-xl text-gray-500 mt-3 text-left font-semibold'>Sign in to continue</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -45,7 +43,7 @@ const Login = () => {
                         <input
                             type="email"
                             placeholder="johndoe@gmail.com"
-                            class="input text-xl input-bordered w-full "
+                            class="input text-xl input-lg input-bordered w-full"
                             {...register("email", {
                                 required: {
                                     value: true,
@@ -67,7 +65,7 @@ const Login = () => {
                         <input
                             type="password"
                             placeholder="password"
-                            class="input text-xl input-bordered w-full "
+                            class="input text-xl input-lg input-bordered w-full "
                             {...register("password", {
                                 required: {
                                     value: true,
@@ -84,8 +82,8 @@ const Login = () => {
                             {errors.password?.type === 'minLength' && <span class="label-text text-xl text-red-500">{errors.password.message}</span>}
                         </label>
                         {signInError}
-                        <p className='text-xl'>Forgot your password? <span className='text-secondary'>Reset</span></p>
-                        <input className='btn btn-primary w-full my-8 text-white' type="submit" value="Sign In" />
+                        <p className='text-xl'>Forgot your password? <span className='text-blue-600'>Reset</span></p>
+                        <input className='btn btn-primary input-lg w-full my-8 text-white' type="submit" value="Sign In" />
                         <p className='text-xl'>Don't have an account? <Link to="/signup" className='text-secondary'>Sign Up</Link></p>
                     </div>
                 </form>
