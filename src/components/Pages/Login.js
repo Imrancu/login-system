@@ -31,62 +31,64 @@ const Login = () => {
 
     return (
         <div className='flex h-screen'>
-            <div className='flex-1 hidden lg:block'><LeftSide /></div>
-            <div className='flex-1 mx-12 my-12'>
-                <h2 className='text-3xl text-left font-bold'>Welcome back!</h2>
-                <p className='text-xl text-gray-500 mt-3 text-left font-semibold'>Sign in to continue</p>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text text-xl mt-3">Email</span>
-                        </label>
-                        <input
-                            type="email"
-                            placeholder="johndoe@gmail.com"
-                            class="input text-xl input-lg input-bordered w-full"
-                            {...register("email", {
-                                required: {
-                                    value: true,
-                                    message: "Email is Required"
-                                },
-                                pattern: {
-                                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                    message: 'Provide a valid Email'
-                                }
-                            })}
-                        />
-                        <label class="label">
-                            {errors.email?.type === 'required' && <span class="label-text text-xl text-red-500">{errors.email.message}</span>}
-                            {errors.email?.type === 'pattern' && <span class="label-text text-xl text-red-500">{errors.email.message}</span>}
-                        </label>
-                        <label class="label">
-                            <span class="label-text text-xl mt-3">Password</span>
-                        </label>
-                        <input
-                            type="password"
-                            placeholder="password"
-                            class="input text-xl input-lg input-bordered w-full "
-                            {...register("password", {
-                                required: {
-                                    value: true,
-                                    message: "Password is Required"
-                                },
-                                minLength: {
-                                    value: 6,
-                                    message: 'Provide a six character or longer'
-                                }
-                            })}
-                        />
-                        <label class="label">
-                            {errors.password?.type === 'required' && <span class="label-text text-xl text-red-500">{errors.password.message}</span>}
-                            {errors.password?.type === 'minLength' && <span class="label-text text-xl text-red-500">{errors.password.message}</span>}
-                        </label>
-                        {signInError}
-                        <p className='text-xl'>Forgot your password? <span className='text-blue-600'>Reset</span></p>
-                        <input className='btn btn-primary input-lg w-full my-8 text-white' type="submit" value="Sign In" />
-                        <p className='text-xl'>Don't have an account? <Link to="/signup" className='text-secondary'>Sign Up</Link></p>
-                    </div>
-                </form>
+            <div className='w-5/12 hidden lg:block'><LeftSide /></div>
+            <div className='lg:w-7/12 '>
+                <div className='mx-24 my-6'>
+                    <h2 className='text-3xl text-left font-bold'>Welcome back!</h2>
+                    <p className='text-xl text-gray-500 mt-3 text-left font-semibold'>Sign in to continue</p>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <div class="form-control w-full">
+                            <label class="label">
+                                <span class="label-text text-xl mt-3">Email</span>
+                            </label>
+                            <input
+                                type="email"
+                                placeholder="johndoe@gmail.com"
+                                class="input text-xl input-lg input-bordered w-full"
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: "Email is Required"
+                                    },
+                                    pattern: {
+                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                        message: 'Provide a valid Email'
+                                    }
+                                })}
+                            />
+                            <label class="label">
+                                {errors.email?.type === 'required' && <span class="label-text text-xl text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span class="label-text text-xl text-red-500">{errors.email.message}</span>}
+                            </label>
+                            <label class="label">
+                                <span class="label-text text-xl mt-3">Password</span>
+                            </label>
+                            <input
+                                type="password"
+                                placeholder="password"
+                                class="input text-xl input-lg input-bordered w-full "
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: "Password is Required"
+                                    },
+                                    minLength: {
+                                        value: 6,
+                                        message: 'Provide a six character or longer'
+                                    }
+                                })}
+                            />
+                            <label class="label">
+                                {errors.password?.type === 'required' && <span class="label-text text-xl text-red-500">{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span class="label-text text-xl text-red-500">{errors.password.message}</span>}
+                            </label>
+                            {signInError}
+                            <p className='text-xl'>Forgot your password? <span className='text-blue-600'>Reset</span></p>
+                            <input className='btn btn-primary input-lg w-full my-8 text-white' type="submit" value="Sign In" />
+                            <p className='text-xl mb-3'>Don't have an account? <Link to="/signup" className='text-secondary'>Sign Up</Link></p>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );

@@ -26,9 +26,9 @@ const SignUp = () => {
 
   return (
     <div className='flex h-screen'>
-      <div className='flex-1 hidden lg:block'><LeftSide /></div>
-      <div className='overflow-x-hidden'>
-        <div className='lg:mx-28 m-14 lg:my-12'>
+      <div className='w-5/12 hidden lg:block'><LeftSide /></div>
+      <div className='lg:overflow-x-hidden lg:w-7/12'>
+        <div className='mx-24 my-6'>
           <h2 className='text-3xl text-left font-bold'>Create an account</h2>
           <p className='text-xl text-gray-500 mt-3 text-left font-semibold'>Let's get started! Fill the form below to sign up</p>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -131,7 +131,7 @@ const SignUp = () => {
                 {...register("referral")}
               />
               <input className='btn btn-primary input-lg w-full my-8 text-white' type="submit" value="Sign Up" />
-              <p className='text-xl'>Already have an account? <Link to="/login" className='text-secondary'>Login</Link></p>
+              <p className='text-xl mb-3'>Already have an account? <Link to="/login" className='text-secondary'>Login</Link></p>
             </div>
           </form>
         </div>
